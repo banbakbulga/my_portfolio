@@ -5,7 +5,8 @@
 ## 구성
 
 - `index.html`: 프로젝트 목록과 경력 및 연락처
-- `projects/`: 프로젝트 상세 사례 4개
+- `projects/`: 프로젝트 상세 사례 5개
+- `bgp.json`: BGP 프로젝트 본문
 - `build.mjs`: 본문 원본과 HTML 생성 스크립트
 - `styles.css`: 반응형 화면과 인쇄 스타일
 - `assets/portrait.jpg`: 증명사진
