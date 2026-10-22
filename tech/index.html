@@ -32,6 +32,7 @@ body{
   font-family:'Pretendard Variable',Pretendard,-apple-system,'Malgun Gothic',sans-serif;
   font-size:16px; line-height:1.78; letter-spacing:-0.014em;
   -webkit-font-smoothing:antialiased;
+  word-break:keep-all; overflow-wrap:break-word;
 }
 a{color:inherit}
 .wrap{max-width:1180px;margin:0 auto;padding:0 var(--mx)}
@@ -54,10 +55,10 @@ h1{font-size:clamp(40px,8.2vw,76px);line-height:1.04;letter-spacing:-0.055em;fon
 h1 small{display:flex;flex-wrap:wrap;gap:4px 18px;font-size:clamp(12.5px,2.4vw,19px);font-weight:500;
          letter-spacing:0.07em;color:var(--ink3);margin-top:16px;line-height:1.5}
 h1 small i{font-style:normal;white-space:nowrap}
-.lede{margin-top:30px;font-size:clamp(16px,2vw,19px);line-height:1.76;color:var(--ink2);max-width:40ch}
+.lede{margin-top:30px;font-size:clamp(16px,2vw,19px);line-height:1.76;color:var(--ink2);max-width:46ch}
 .lede b{color:var(--ink);font-weight:700}
 .port{width:clamp(108px,15vw,150px);aspect-ratio:3/4;object-fit:cover;object-position:center 16%;
-      filter:grayscale(1) contrast(1.05);border:1px solid var(--line)}
+      border:1px solid var(--line)}
 @media(max-width:640px){
   header .inner{grid-template-columns:1fr;align-items:start}
   .port{order:-1;width:104px}
@@ -91,8 +92,7 @@ section{padding:clamp(44px,7vw,80px) 0;border-top:1px solid var(--line)}
 .proj h3 em{font-style:normal;font-weight:500;font-size:0.56em;color:var(--ink3);letter-spacing:-0.02em;margin-left:9px}
 .pdate{font-size:13px;color:var(--ink3);white-space:nowrap}
 .pquote{font-size:clamp(16px,2.1vw,20px);line-height:1.62;letter-spacing:-0.03em;
-        color:var(--ink);font-weight:600;margin:16px 0 24px;max-width:46ch;
-        border-left:2px solid var(--acc);padding-left:18px}
+        color:var(--ink);font-weight:600;margin:16px 0 26px;max-width:46ch}
 .pbody{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(248px,100%),1fr));gap:clamp(18px,3vw,38px)}
 .pbody h4{font-size:11.5px;letter-spacing:0.16em;color:var(--acc);font-weight:700;margin-bottom:9px}
 .pbody p{color:var(--ink2);font-size:15.3px}
@@ -102,7 +102,7 @@ section{padding:clamp(44px,7vw,80px) 0;border-top:1px solid var(--line)}
       padding-top:22px;border-top:1px dashed var(--line)}
 .nums div .n{font-size:clamp(25px,3.6vw,34px);font-weight:800;letter-spacing:-0.05em;line-height:1.1}
 .nums div .l{font-size:12.5px;color:var(--ink3);margin-top:5px;letter-spacing:-0.01em}
-.tags{margin-top:20px;font-size:12.5px;color:var(--ink3);letter-spacing:0.02em}
+.tags{word-break:break-word;margin-top:20px;font-size:12.5px;color:var(--ink3);letter-spacing:0.02em}
 
 /* ---------- compact list ---------- */
 .mini{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(400px,100%),1fr));gap:clamp(22px,3vw,40px) clamp(28px,5vw,64px)}
@@ -151,11 +151,11 @@ footer{border-top:1px solid var(--line);padding:clamp(40px,6vw,64px) 0 clamp(50p
 <header><div class="wrap inner">
   <div>
     <div class="eyebrow">SOFTWARE ENGINEER</div>
-    <h1>만든 다음이<br>더 어렵습니다
+    <h1>게임과 함께 돌아가는<br>클라이언트와 AI 시스템
       <small><i>REAL-TIME CLIENT</i><i>AI SYSTEMS</i><i>SERVICE OPERATION</i></small>
     </h1>
     <p class="lede">
-      게임과 함께 실행되는 클라이언트를 만들고 AI 기능을 실제 서비스로 연결합니다.
+      기획과 구현부터 성능 개선, 배포와 운영까지 한 서비스 안에서 맡아 왔습니다.
       기능이 동작하는 순간보다 <b>사용자가 계속 켜둘 수 있는 상태</b>를 더 중요하게 봅니다.
     </p>
   </div>
@@ -354,22 +354,21 @@ footer{border-top:1px solid var(--line);padding:clamp(40px,6vw,64px) 0 clamp(50p
     <dt>ENGINEERING</dt>
     <dd>성능 측정과 병목 분석, 메모리 이슈 추적, 평가셋 설계와 실패 원인 분리, 설치와 자동 업데이트, 배포 운영</dd>
     <dt>EDUCATION</dt>
-    <dd>충남대학교 컴퓨터융합학부 &nbsp;|&nbsp; 2020.03 — 2026.02 &nbsp;|&nbsp; GPA 3.30 / 4.5</dd>
+    <dd>충남대학교 컴퓨터융합학부 &nbsp;|&nbsp; 2020.03 — 2026.02</dd>
     <dt>AWARDS</dt>
     <dd>생성형 AI 챌린지 은상 (2025.09) &nbsp;|&nbsp; NHN Academy 프로젝트 우수상 (2024.12)</dd>
     <dt>CERTIFICATION</dt>
-    <dd>ADsP, SQLD, 한국사능력검정시험 1급, 컴퓨터활용능력 2급</dd>
+    <dd>ADsP, SQLD</dd>
     <dt>LANGUAGE</dt>
-    <dd>OPIc IH &nbsp;|&nbsp; TOEIC 790</dd>
+    <dd>OPIc IH</dd>
   </dl>
 </div></section>
 
 <footer><div class="wrap">
-  <div class="cta">만든 다음까지 같이 보는 사람을 찾고 있다면</div>
+  <div class="cta">연락처</div>
   <div class="links">
     <a href="mailto:junh9126@gmail.com">junh9126@gmail.com</a>
     <a href="tel:+821057661639">010-5766-1639</a>
-    <a href="resume.pdf" target="_blank" rel="noopener">이력서 PDF</a>
     <!-- GitHub 링크는 일부러 뺐습니다. 넣으면 저장소를 통해 기존 포트폴리오로 바로 넘어갈 수 있습니다.
          그래도 넣으려면 아래 주석을 풀면 됩니다.
     <a href="https://github.com/banbakbulga" target="_blank" rel="noopener">GitHub</a> -->
