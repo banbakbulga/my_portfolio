@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>양준혁 — Software Engineer</title>
+<meta name="description" content="실시간 게임 클라이언트와 AI 시스템을 만들고 운영합니다.">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+:root{
+  --bg:#fbfaf8; --paper:#fff; --ink:#15171b; --ink2:#3c424c; --ink3:#767d89;
+  --line:#e3e1dc; --line2:#efede9; --acc:#174a55; --acc-soft:#e8f0f0;
+  --mx:clamp(16px,5vw,40px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#101215; --paper:#15181c; --ink:#e9eaec; --ink2:#b3b8c0; --ink3:#7c838d;
+    --line:#262a30; --line2:#1d2126; --acc:#6fb3bd; --acc-soft:#16272b;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#101215; --paper:#15181c; --ink:#e9eaec; --ink2:#b3b8c0; --ink3:#7c838d;
+  --line:#262a30; --line2:#1d2126; --acc:#6fb3bd; --acc-soft:#16272b;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{overflow-x:hidden}
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:'Pretendard Variable',Pretendard,-apple-system,'Malgun Gothic',sans-serif;
+  font-size:16px; line-height:1.78; letter-spacing:-0.014em;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 var(--mx)}
+
+/* ---------- nav ---------- */
+nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);
+    backdrop-filter:saturate(1.3) blur(10px);border-bottom:1px solid var(--line2)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:58px;gap:16px}
+nav .sig{flex-shrink:0;font-weight:800;letter-spacing:-0.04em;font-size:16px;white-space:nowrap}
+nav ul{display:flex;gap:clamp(12px,2.4vw,26px);list-style:none;font-size:13.5px;color:var(--ink3);overflow-x:auto;scrollbar-width:none;min-width:0;flex-shrink:1}
+nav ul::-webkit-scrollbar{display:none}
+nav a{text-decoration:none;white-space:nowrap;padding:4px 0;border-bottom:1.5px solid transparent}
+nav a:hover{color:var(--ink);border-bottom-color:var(--acc)}
+
+/* ---------- hero ---------- */
+header{padding:clamp(56px,11vw,116px) 0 clamp(40px,7vw,72px)}
+header .inner{display:grid;grid-template-columns:1fr auto;gap:clamp(24px,5vw,64px);align-items:end}
+.eyebrow{font-size:12.5px;letter-spacing:0.19em;color:var(--acc);font-weight:700;margin-bottom:20px}
+h1{font-size:clamp(40px,8.2vw,76px);line-height:1.04;letter-spacing:-0.055em;font-weight:800}
+h1 small{display:flex;flex-wrap:wrap;gap:4px 18px;font-size:clamp(12.5px,2.4vw,19px);font-weight:500;
+         letter-spacing:0.07em;color:var(--ink3);margin-top:16px;line-height:1.5}
+h1 small i{font-style:normal;white-space:nowrap}
+.lede{margin-top:30px;font-size:clamp(16px,2vw,19px);line-height:1.76;color:var(--ink2);max-width:40ch}
+.lede b{color:var(--ink);font-weight:700}
+.port{width:clamp(108px,15vw,150px);aspect-ratio:3/4;object-fit:cover;object-position:center 16%;
+      filter:grayscale(1) contrast(1.05);border:1px solid var(--line)}
+@media(max-width:640px){
+  header .inner{grid-template-columns:1fr;align-items:start}
+  .port{order:-1;width:104px}
+}
+
+/* ---------- section ---------- */
+section{padding:clamp(44px,7vw,80px) 0;border-top:1px solid var(--line)}
+.shead{display:flex;align-items:baseline;gap:16px;margin-bottom:clamp(26px,4vw,44px);flex-wrap:wrap}
+.shead h2{font-size:clamp(21px,3vw,27px);letter-spacing:-0.045em;font-weight:800}
+.shead span{font-size:12px;letter-spacing:0.17em;color:var(--ink3);font-weight:600}
+
+/* ---------- experience ---------- */
+.job{display:grid;grid-template-columns:200px 1fr;gap:clamp(16px,3vw,48px);
+     padding:clamp(22px,3vw,30px) 0;border-top:1px solid var(--line2)}
+.job:first-of-type{border-top:0;padding-top:0}
+.job .meta .co{font-size:19px;font-weight:800;letter-spacing:-0.035em}
+.job .meta .ro{font-size:14px;color:var(--ink2);margin-top:3px}
+.job .meta .dt{font-size:13px;color:var(--ink3);margin-top:7px;letter-spacing:0.01em}
+.job .body>p:first-child{font-weight:600;margin-bottom:14px;letter-spacing:-0.02em}
+.job ul{list-style:none;display:grid;gap:11px}
+.job li{position:relative;padding-left:17px;color:var(--ink2);font-size:15.3px}
+.job li::before{content:'';position:absolute;left:0;top:11px;width:7px;height:1.5px;background:var(--ink3)}
+.job li b{color:var(--ink);font-weight:700}
+@media(max-width:760px){.job{grid-template-columns:1fr;gap:14px}}
+
+/* ---------- projects ---------- */
+.proj{padding:clamp(28px,4vw,46px) 0;border-top:1px solid var(--line2)}
+.proj:first-of-type{border-top:0;padding-top:0}
+.ptop{display:flex;align-items:baseline;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:6px}
+.proj h3{font-size:clamp(23px,3.4vw,32px);letter-spacing:-0.05em;font-weight:800}
+.proj h3 em{font-style:normal;font-weight:500;font-size:0.56em;color:var(--ink3);letter-spacing:-0.02em;margin-left:9px}
+.pdate{font-size:13px;color:var(--ink3);white-space:nowrap}
+.pquote{font-size:clamp(16px,2.1vw,20px);line-height:1.62;letter-spacing:-0.03em;
+        color:var(--ink);font-weight:600;margin:16px 0 24px;max-width:46ch;
+        border-left:2px solid var(--acc);padding-left:18px}
+.pbody{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(248px,100%),1fr));gap:clamp(18px,3vw,38px)}
+.pbody h4{font-size:11.5px;letter-spacing:0.16em;color:var(--acc);font-weight:700;margin-bottom:9px}
+.pbody p{color:var(--ink2);font-size:15.3px}
+.pbody p+p{margin-top:10px}
+.pbody b{color:var(--ink);font-weight:700}
+.nums{display:flex;flex-wrap:wrap;gap:clamp(22px,4vw,54px);margin-top:26px;
+      padding-top:22px;border-top:1px dashed var(--line)}
+.nums div .n{font-size:clamp(25px,3.6vw,34px);font-weight:800;letter-spacing:-0.05em;line-height:1.1}
+.nums div .l{font-size:12.5px;color:var(--ink3);margin-top:5px;letter-spacing:-0.01em}
+.tags{margin-top:20px;font-size:12.5px;color:var(--ink3);letter-spacing:0.02em}
+
+/* ---------- compact list ---------- */
+.mini{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(400px,100%),1fr));gap:clamp(22px,3vw,40px) clamp(28px,5vw,64px)}
+.mini article{border-top:2px solid var(--ink);padding-top:14px}
+.mini h4{font-size:16.5px;font-weight:800;letter-spacing:-0.035em}
+.mini .mt{font-size:12.5px;color:var(--ink3);margin:3px 0 10px}
+.mini p{font-size:14.8px;color:var(--ink2);line-height:1.7}
+
+/* ---------- approach ---------- */
+.appr{display:grid;gap:clamp(18px,3vw,30px)}
+.appr article{display:grid;grid-template-columns:38px 1fr;gap:clamp(14px,2.5vw,26px);
+              padding-top:18px;border-top:1px solid var(--line2)}
+.appr article:first-child{border-top:0;padding-top:0}
+.appr .no{font-size:13px;font-weight:800;color:var(--acc);letter-spacing:0.04em;padding-top:4px}
+.appr h4{font-size:17.5px;font-weight:800;letter-spacing:-0.035em;margin-bottom:7px}
+.appr p{color:var(--ink2);font-size:15.3px;max-width:62ch}
+
+/* ---------- skills / facts ---------- */
+.kv{display:grid;grid-template-columns:150px 1fr;gap:12px clamp(16px,3vw,34px);align-items:start}
+.kv dt{font-size:12.5px;letter-spacing:0.13em;color:var(--acc);font-weight:700;padding-top:4px}
+.kv dd{font-size:15.3px;color:var(--ink2);padding-bottom:12px;border-bottom:1px solid var(--line2)}
+.kv dd:last-of-type{border-bottom:0}
+@media(max-width:620px){.kv{grid-template-columns:1fr;gap:4px}.kv dt{padding-top:12px}}
+
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--line);padding:clamp(40px,6vw,64px) 0 clamp(50px,7vw,80px)}
+.cta{font-size:clamp(22px,3.4vw,30px);font-weight:800;letter-spacing:-0.045em;margin-bottom:22px}
+.links{display:flex;gap:26px;flex-wrap:wrap;font-size:15.5px}
+.links a{text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:3px}
+.links a:hover{border-bottom-color:var(--acc);color:var(--acc)}
+.fine{margin-top:34px;font-size:12.5px;color:var(--ink3);letter-spacing:0.01em}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <div class="sig">양준혁</div>
+  <ul>
+    <li><a href="#work">경력</a></li>
+    <li><a href="#projects">프로젝트</a></li>
+    <li><a href="#approach">일하는 방식</a></li>
+    <li><a href="#about">기술과 기록</a></li>
+  </ul>
+</div></nav>
+
+<header><div class="wrap inner">
+  <div>
+    <div class="eyebrow">SOFTWARE ENGINEER</div>
+    <h1>만든 다음이<br>더 어렵습니다
+      <small><i>REAL-TIME CLIENT</i><i>AI SYSTEMS</i><i>SERVICE OPERATION</i></small>
+    </h1>
+    <p class="lede">
+      게임과 함께 실행되는 클라이언트를 만들고 AI 기능을 실제 서비스로 연결합니다.
+      기능이 동작하는 순간보다 <b>사용자가 계속 켜둘 수 있는 상태</b>를 더 중요하게 봅니다.
+    </p>
+  </div>
+  <img class="port" src="photo.jpg" alt="양준혁">
+</div></header>
+
+<section id="work"><div class="wrap">
+  <div class="shead"><h2>경력</h2><span>EXPERIENCE</span></div>
+
+  <div class="job">
+    <div class="meta">
+      <div class="co">루모스</div>
+      <div class="ro">Software Developer</div>
+      <div class="dt">2026.02 — 재직 중</div>
+    </div>
+    <div class="body">
+      <p>실시간 게임 데이터 기반 AI 코칭 데스크톱 서비스 LOLPAGO를 기획부터 개발, 배포, 운영까지 맡고 있습니다.</p>
+      <ul>
+        <li>Electron, React, TypeScript로 Windows 클라이언트를 구현했습니다. 게임 클라이언트 API와 WebSocket을 연동해 상태를 감지하고 화면 캡처와 OCR 분석 결과를 오버레이와 TTS 음성으로 전달합니다.</li>
+        <li>전체 화면 게임 위에 뜨는 UI라 기본 영역의 클릭은 게임으로 그대로 흘려보내고 조작이 필요한 부분만 입력을 받도록 구성했습니다.</li>
+        <li>이미지 전송을 base64에서 binary로 바꿔 <b>틱당 전송량을 약 24%</b> 줄였고 장시간 실행 시 쌓이던 메모리 누수를 해결했습니다.</li>
+        <li>코드 서명과 설치 프로그램, 자동 업데이트를 구축해 공식 웹사이트로 배포하고 피드백을 받아 고치고 있습니다.</li>
+        <li>LLM 기반 매치 리뷰와 게임 지식 시스템을 개발하고 평가셋으로 라우팅, 검색, 근거, 최종 응답을 단계별로 검증했습니다.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="job">
+    <div class="meta">
+      <div class="co">한국타이어앤테크놀로지</div>
+      <div class="ro">R&amp;D DX Intern</div>
+      <div class="dt">2025.09 — 2025.12</div>
+    </div>
+    <div class="body">
+      <p>사내 기술문서 약 2,000건을 생성형 AI가 검색할 수 있는 데이터로 바꾸는 작업을 맡았습니다.</p>
+      <ul>
+        <li>PDF, PPT, DOCX, HWP 형식마다 표와 제목이 저장되는 방식이 달라 변환 결과를 직접 비교하고 구조 보존 기준을 세웠습니다.</li>
+        <li>Python으로 정제, 청킹, 임베딩, OpenSearch 색인을 자동화하고 백업 구조와 처리 현황 모니터링 화면을 함께 만들었습니다.</li>
+        <li>제목 계층 기준으로 나눈 청킹이 연구원의 실제 질의와 맞지 않았습니다. 사람들은 문서 제목이 아니라 업무와 부품, 현상을 기준으로 물었습니다. 질의 기록을 근거로 청킹 단위와 메타데이터, 색인 구조를 다시 설계했습니다.</li>
+        <li>약 <b>2개월로 예상된 구축을 1개월 안에</b> 마쳤습니다.</li>
+      </ul>
+    </div>
+  </div>
+</div></section>
+
+<section id="projects"><div class="wrap">
+  <div class="shead"><h2>프로젝트</h2><span>SELECTED WORK</span></div>
+
+  <article class="proj">
+    <div class="ptop">
+      <h3>LOLPAGO<em>실시간 AI 게임 코칭 데스크톱 앱</em></h3>
+      <div class="pdate">2026.02 — 현재</div>
+    </div>
+    <p class="pquote">게임을 분석하는 AI보다 먼저 풀어야 했던 문제는 AI가 게임을 방해하지 않고 함께 실행될 수 있는가였습니다.</p>
+    <div class="pbody">
+      <div>
+        <h4>WHAT HAPPENED</h4>
+        <p>처음에는 데이터 수집과 코칭 기능을 빠르게 구현하는 데 집중했습니다. 실제 게임과 같이 켜보니 기능이 정상 동작하는 것만으로는 부족했습니다.</p>
+        <p>캡처와 전송이 반복되며 네트워크 사용량이 커졌고 오래 켜두면 메모리가 계속 올라갔습니다. 전체 화면 게임 위의 UI는 입력을 가로챌 수 있었습니다.</p>
+      </div>
+      <div>
+        <h4>WHAT I DID</h4>
+        <p>원인을 한 덩어리로 보지 않고 네트워크 전송과 화면 렌더링을 나눠 따로 계측했습니다. 병목이 전송량이 아니라 인코딩 방식이라는 것을 확인하고 base64를 바이너리 규격으로 바꿨습니다.</p>
+        <p>오버레이는 기본 영역의 클릭을 게임으로 통과시키고 필요한 부분만 입력을 받게 했습니다. 배포할 때마다 같은 환경에서 지표를 다시 재고 반영했습니다.</p>
+      </div>
+    </div>
+    <div class="nums">
+      <div><div class="n">24%</div><div class="l">틱당 전송량 감소</div></div>
+      <div><div class="n">100 → 150~200</div><div class="l">동시 실행 시 게임 FPS</div></div>
+      <div><div class="n">누수 해결</div><div class="l">장시간 실행 메모리</div></div>
+    </div>
+    <div class="tags">Electron &nbsp; React &nbsp; TypeScript &nbsp; WebSocket &nbsp; OCR &nbsp; TTS &nbsp; code signing</div>
+  </article>
+
+  <article class="proj">
+    <div class="ptop">
+      <h3>LoL Wiki<em>게임 데이터 LLM 분석 시스템</em></h3>
+      <div class="pdate">2025</div>
+    </div>
+    <p class="pquote">LLM이 그럴듯한 답을 만드는 것보다 어떤 데이터를 근거로 답했는지 확인할 수 있는 구조가 필요했습니다.</p>
+    <div class="pbody">
+      <div>
+        <h4>WHAT HAPPENED</h4>
+        <p>패치마다 수치와 메타가 바뀌는 도메인입니다. 모델의 기존 지식에 기대면 이전 패치 정보가 최신 정보처럼 섞이고 같은 질문에도 근거가 달라질 수 있었습니다. 틀렸을 때 검색이 문제인지 생성이 문제인지 구분할 방법도 없었습니다.</p>
+      </div>
+      <div>
+        <h4>WHAT I DID</h4>
+        <p>공식 데이터, 패치 정보, 메타 스냅샷을 갱신 주기에 따라 분리하고 원본과 가공 결과도 구분했습니다. 자연어 질문을 구조화된 조건으로 바꾸는 계층과 검색 계층을 나눠 같은 조건이면 같은 결과가 나오게 했고 검색된 데이터만 생성에 넘겼습니다.</p>
+        <p>평가도 최종 답변 하나로 보지 않고 라우팅, 검색, 근거, 응답으로 나눠 측정했습니다.</p>
+      </div>
+    </div>
+    <div class="nums">
+      <div><div class="n">1,812</div><div class="l">평가 문항 (초기 50개에서 확장)</div></div>
+      <div><div class="n">1,809</div><div class="l">기준 통과 문항</div></div>
+      <div><div class="n">4단계</div><div class="l">분리 측정 축</div></div>
+    </div>
+    <div class="tags">Python &nbsp; LLM &nbsp; structured retrieval &nbsp; deterministic search &nbsp; regression evaluation</div>
+  </article>
+
+  <article class="proj">
+    <div class="ptop">
+      <h3>SuperChacha<em>학내 AI 챗봇 통합 서비스</em></h3>
+      <div class="pdate">2025.06 — 2025.09</div>
+    </div>
+    <p class="pquote">사용자를 편하게 만들려고 만든 AI 서비스인데 사용자가 먼저 조직 구조를 공부해야 한다면 문제가 있다고 봤습니다.</p>
+    <div class="pbody">
+      <div>
+        <h4>WHAT HAPPENED</h4>
+        <p>부서별 챗봇이 25개로 흩어져 있었습니다. 각자 담당 영역은 답할 수 있었지만 사용자는 질문하기 전에 어느 부서가 담당인지부터 알아야 했습니다. 탐색을 줄이려고 만든 도구가 새로운 탐색 단계를 만들고 있었습니다.</p>
+        <p>초기 평가에서 오분류가 30% 이상 나왔습니다. 처음에는 임베딩 모델이나 유사도 기준 문제라고 생각했습니다.</p>
+      </div>
+      <div>
+        <h4>WHAT I DID</h4>
+        <p>실패 사례를 직접 모아보니 모델 하나로 설명되지 않았습니다. 담당 중복, 담당 부재, 모호한 질문, 오연결로 나누고 유형마다 다른 처방을 썼습니다. 담당이 없으면 가장 가까운 챗봇으로 억지로 보내지 않고 없다고 답하게 했고 질문이 모호하면 되묻게 했습니다.</p>
+        <p>기준을 고칠 때마다 성공 사례만 보지 않고 전체 평가셋을 다시 돌려 다른 유형이 나빠지지 않는지 확인했습니다.</p>
+      </div>
+    </div>
+    <div class="nums">
+      <div><div class="n">30% → 2건</div><div class="l">120건 평가셋 오분류</div></div>
+      <div><div class="n">25개</div><div class="l">통합 대상 챗봇</div></div>
+      <div><div class="n">은상</div><div class="l">생성형 AI 챌린지</div></div>
+    </div>
+    <div class="tags">Embedding &nbsp; MCP &nbsp; LLM routing &nbsp; error taxonomy &nbsp; evaluation set</div>
+  </article>
+</div></section>
+
+<section><div class="wrap">
+  <div class="shead"><h2>그 외 작업</h2><span>ALSO BUILT</span></div>
+  <div class="mini">
+    <article>
+      <h4>BGP Routing Anomaly Analysis</h4>
+      <div class="mt">졸업 프로젝트 &nbsp;|&nbsp; 2025.03 — 2025.10</div>
+      <p>RIPE RIS와 RouteViews 데이터를 10분 단위로 적재하고 Prefix Hijacking, Route Leak, AS Path Loop, MOAS, Flapping을 규칙 기반으로 탐지했습니다. 발생 사실만으로 위험도를 매기지 않고 지속 시간과 과거 이력을 반영했고 결과를 자연어 보고서로 바꿔 질문으로 조회하게 만들었습니다.</p>
+    </article>
+    <article>
+      <h4>태권도 대회 운영 시스템</h4>
+      <div class="mt">외부 의뢰 2인 프로젝트 &nbsp;|&nbsp; 2026.04 —</div>
+      <p>기존 PHP 시스템과 운영 중인 DB가 이미 있었고 대회 날짜는 정해져 있었습니다. 발주자에게 실제 진행 순서와 예외 상황을 먼저 확인해 유지할 범위와 바꿀 범위를 나눈 뒤 참가자 관리부터 상장 출력까지 22개 기능을 단계적으로 고쳤습니다. 대회 당일 현장 대응까지 맡았습니다.</p>
+    </article>
+    <article>
+      <h4>Radio Semantic Archive</h4>
+      <div class="mt">LLM 기반 장시간 음성 탐색 &nbsp;|&nbsp; 2025</div>
+      <p>Whisper로 방송을 텍스트로 바꾼 뒤 시간 간격이 아니라 내용이 바뀌는 지점을 기준으로 LLM이 의미 단위를 나누게 했습니다. 구간을 유형별로 분류하고 Spotify와 IMDb API로 실제 콘텐츠와 연결했습니다. 정답 데이터를 직접 만들어 주요 구간 인식을 약 5~9개에서 12~14개 수준으로 올렸습니다.</p>
+    </article>
+    <article>
+      <h4>MSA 온라인 서점</h4>
+      <div class="mt">NHN Academy 8인 팀 &nbsp;|&nbsp; 2024</div>
+      <p>Java와 Spring Boot 기반으로 주문 서비스를 담당했습니다. 주문은 회원, 도서, 쿠폰, 결제와 엮여 있어 다른 서비스를 기다리면 개발이 멈췄습니다. 요청과 응답, 실패 규격을 먼저 합의해 완성 전에도 흐름을 검증했고 단위 테스트 커버리지를 80% 이상 유지했습니다. 프로젝트 우수상을 받았습니다.</p>
+    </article>
+  </div>
+</div></section>
+
+<section id="approach"><div class="wrap">
+  <div class="shead"><h2>일하는 방식</h2><span>HOW I WORK</span></div>
+  <div class="appr">
+    <article>
+      <div class="no">01</div>
+      <div>
+        <h4>기술을 바꾸기 전에 어디서 실패했는지 나눕니다</h4>
+        <p>AI 시스템이면 데이터, 라우팅, 검색, 근거, 생성, 평가로 나눕니다. 서비스면 입력, 처리, 네트워크, 클라이언트, 사용 흐름, 운영으로 나눕니다. 나누고 나면 무엇을 측정해야 하는지가 보입니다. 모델을 먼저 교체했다면 SuperChacha의 진짜 원인은 끝까지 못 찾았을 겁니다.</p>
+      </div>
+    </article>
+    <article>
+      <div class="no">02</div>
+      <div>
+        <h4>개발 환경에서 도는 것을 완료라고 보지 않습니다</h4>
+        <p>장시간 켜두면 어떻게 되는지, 사용자의 입력을 방해하지 않는지, 설치와 업데이트가 되는지, 문제가 생겼을 때 원인을 되짚을 수 있는지까지 확인합니다. 사용자가 계속 켜둘 수 없는 기능은 완성된 기능이 아닙니다.</p>
+      </div>
+    </article>
+    <article>
+      <div class="no">03</div>
+      <div>
+        <h4>평가 기준도 검증 대상입니다</h4>
+        <p>정상적인 응답이 실패로 분류된 적이 있습니다. 서비스 로직이 아니라 평가 쪽이 틀린 경우였습니다. 반대로 근거를 빠뜨린 답변이 통과하기도 했습니다. 측정이 틀리면 그 위에서 내린 판단도 같이 틀립니다. 그 뒤로 점수를 그대로 믿지 않고 평가셋과 검증 코드도 함께 봅니다.</p>
+      </div>
+    </article>
+    <article>
+      <div class="no">04</div>
+      <div>
+        <h4>AI에게 맡길 때는 되짚을 경로를 먼저 만듭니다</h4>
+        <p>에이전트에게 작업을 위임할 때 역할을 지시자와 수행자로 나눠 자기 결과를 자기가 승인하지 못하게 했습니다. 보고와 로그는 주장일 뿐이라 완료 판정은 검사 도구를 직접 돌린 결과로만 내렸고 호출과 지시, 로그, 커밋의 단위를 맞춰 어떤 변경이 어느 지시에서 나왔는지 거슬러 올라갈 수 있게 했습니다.</p>
+      </div>
+    </article>
+  </div>
+</div></section>
+
+<section id="about"><div class="wrap">
+  <div class="shead"><h2>기술과 기록</h2><span>STACK &amp; RECORD</span></div>
+  <dl class="kv">
+    <dt>CLIENT</dt>
+    <dd>Electron, React, TypeScript, JavaScript, WebSocket, REST API, OCR, TTS, real-time overlay</dd>
+    <dt>AI / DATA</dt>
+    <dd>LLM, OpenAI API, Whisper, Embedding, RAG, MCP, OpenSearch, Milvus, TimescaleDB</dd>
+    <dt>BACKEND</dt>
+    <dd>Python, Java, Spring Boot, SQL, MSA, API Integration</dd>
+    <dt>ENGINEERING</dt>
+    <dd>성능 측정과 병목 분석, 메모리 이슈 추적, 평가셋 설계와 실패 원인 분리, 설치와 자동 업데이트, 배포 운영</dd>
+    <dt>EDUCATION</dt>
+    <dd>충남대학교 컴퓨터융합학부 &nbsp;|&nbsp; 2020.03 — 2026.02 &nbsp;|&nbsp; GPA 3.30 / 4.5</dd>
+    <dt>AWARDS</dt>
+    <dd>생성형 AI 챌린지 은상 (2025.09) &nbsp;|&nbsp; NHN Academy 프로젝트 우수상 (2024.12)</dd>
+    <dt>CERTIFICATION</dt>
+    <dd>ADsP, SQLD, 한국사능력검정시험 1급, 컴퓨터활용능력 2급</dd>
+    <dt>LANGUAGE</dt>
+    <dd>OPIc IH &nbsp;|&nbsp; TOEIC 790</dd>
+  </dl>
+</div></section>
+
+<footer><div class="wrap">
+  <div class="cta">만든 다음까지 같이 보는 사람을 찾고 있다면</div>
+  <div class="links">
+    <a href="mailto:junh9126@gmail.com">junh9126@gmail.com</a>
+    <a href="tel:+821057661639">010-5766-1639</a>
+    <a href="resume.pdf" target="_blank" rel="noopener">이력서 PDF</a>
+    <!-- GitHub 링크는 일부러 뺐습니다. 넣으면 저장소를 통해 기존 포트폴리오로 바로 넘어갈 수 있습니다.
+         그래도 넣으려면 아래 주석을 풀면 됩니다.
+    <a href="https://github.com/banbakbulga" target="_blank" rel="noopener">GitHub</a> -->
+  </div>
+  <div class="fine">© 2026 양준혁</div>
+</div></footer>
+
+</body>
+</html>
