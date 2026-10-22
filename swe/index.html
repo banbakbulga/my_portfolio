@@ -1,0 +1,592 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>양준혁 · Software Developer</title>
+<meta name="description" content="기획한 것을 만들어 배포하고 쓰이는 동안 고쳐왔습니다. 양준혁의 개발 기록.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#101217">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23101217'/%3E%3Ctext x='16' y='22' font-family='sans-serif' font-size='16' font-weight='700' fill='%23fff' text-anchor='middle'%3EY%3C/text%3E%3C/svg%3E">
+<style>
+@font-face{font-family:'Pretendard';src:url('img/Pretendard-Regular.woff2')format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Pretendard';src:url('img/Pretendard-SemiBold.woff2')format('woff2');font-weight:600;font-display:swap}
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0d0f13; --panel:#14171d; --line:#262b34; --line2:#353b46;
+  --ink:#eef0f3; --mid:#a2a9b5; --soft:#6d7582; --pt:#5b8def;
+  --w:1080px;
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Pretendard',-apple-system,'Malgun Gothic',sans-serif;
+  background:var(--bg); color:var(--ink);
+  font-size:16px; line-height:1.72; letter-spacing:-.011em;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:var(--w);margin:0 auto;padding:0 28px}
+a{color:inherit}
+
+/* ── 상단 ── */
+.top{position:sticky;top:0;z-index:50;background:rgba(13,15,19,.86);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:58px}
+.brand{font-weight:600;font-size:15px;letter-spacing:-.02em}
+.brand span{color:var(--soft);font-weight:400;margin-left:9px}
+.tnav{display:flex;gap:26px;font-size:14px;color:var(--mid)}
+.tnav a{text-decoration:none}
+.tnav a:hover{color:var(--ink)}
+
+/* ── 히어로 ── */
+.hero{padding:118px 0 86px;border-bottom:1px solid var(--line)}
+.hero .wrap{display:grid;grid-template-columns:1fr 168px;gap:52px;align-items:center}
+.eyebrow{font-size:12px;letter-spacing:.42em;color:var(--soft);margin-bottom:26px}
+.hero h1{font-size:46px;font-weight:600;line-height:1.3;letter-spacing:-.038em}
+.hero h1 em{font-style:normal;color:var(--pt)}
+.hero p{margin-top:26px;color:var(--mid);font-size:17px;max-width:620px}
+.hero img{width:168px;height:210px;object-fit:cover;border-radius:3px;filter:grayscale(.12)}
+.meta{display:flex;gap:30px;margin-top:40px;font-size:14px;color:var(--mid);flex-wrap:wrap}
+.meta a{text-decoration:none;border-bottom:1px solid var(--line2);padding-bottom:2px}
+.meta a:hover{color:var(--ink);border-color:var(--pt)}
+
+/* ── 섹션 ── */
+section{padding:86px 0;border-bottom:1px solid var(--line)}
+.shead{display:flex;align-items:baseline;gap:16px;margin-bottom:46px}
+.shead h2{font-size:13px;font-weight:600;letter-spacing:.2em;color:var(--pt)}
+.shead span{font-size:14px;color:var(--soft)}
+
+/* ── 경력 ── */
+.job{display:grid;grid-template-columns:168px 1fr;gap:34px;padding:26px 0;border-top:1px solid var(--line)}
+.job:first-of-type{border-top:0;padding-top:0}
+.job time{font-size:13.5px;color:var(--soft);padding-top:5px}
+.job h3{font-size:19px;font-weight:600;letter-spacing:-.025em}
+.job h3 i{font-style:normal;font-size:13.5px;color:var(--soft);font-weight:400;margin-left:11px}
+.job p{color:var(--mid);margin-top:10px;font-size:15.5px}
+
+/* ── 기술 ── */
+.sk{padding:24px 0;border-top:1px solid var(--line)}
+.sk:first-of-type{border-top:0;padding-top:0}
+.sk h3{font-size:16.5px;font-weight:600;letter-spacing:-.02em}
+.sk p{color:var(--mid);margin-top:8px;font-size:15.5px}
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}
+.tags b{font-size:12.5px;font-weight:400;color:var(--mid);background:var(--panel);border:1px solid var(--line);padding:4px 11px;border-radius:999px}
+
+/* ── 프로젝트 ── */
+.proj{border-top:1px solid var(--line);padding:46px 0}
+.proj:first-of-type{border-top:0;padding-top:0}
+.pno{font-size:12.5px;color:var(--pt);font-weight:600;letter-spacing:.1em}
+.pwho{font-size:13.5px;color:var(--soft);margin-top:9px}
+.proj h3{font-size:27px;font-weight:600;letter-spacing:-.035em;margin-top:7px;line-height:1.3}
+.plead{color:var(--mid);margin-top:13px;font-size:16px;max-width:760px}
+.facts{display:grid;grid-template-columns:230px 1fr;gap:34px;margin:30px 0;padding:24px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);align-items:center}
+.hero-num{font-size:34px;font-weight:600;letter-spacing:-.045em;line-height:1.08;color:var(--ink)}
+.hero-num u{display:block;text-decoration:none;font-size:13px;font-weight:400;color:var(--soft);letter-spacing:0;margin-top:9px;line-height:1.5}
+.kv{display:grid;grid-template-columns:62px 1fr;gap:9px 18px;font-size:14.5px}
+.kv dt{color:var(--soft)}
+.kv dd{color:var(--mid)}
+.body{display:grid;grid-template-columns:1fr 1fr;gap:34px}
+.body h4{font-size:13px;font-weight:600;color:var(--pt);letter-spacing:.06em;margin-bottom:11px}
+.body p,.body li{color:var(--mid);font-size:15.5px}
+.body ul{list-style:none}
+.body li{position:relative;padding-left:15px;margin-bottom:9px}
+.body li:before{content:'';position:absolute;left:0;top:11px;width:5px;height:1px;background:var(--line2)}
+.out{margin-top:30px;background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:24px 26px}
+.out h4{font-size:13px;font-weight:600;color:var(--pt);letter-spacing:.06em;margin-bottom:10px}
+.out p{color:var(--ink);font-size:15.5px}
+.shots{display:grid;gap:14px;margin-top:30px}
+.shots.two{grid-template-columns:1fr 1fr}
+.shots img{width:100%;display:block;border:1px solid var(--line);border-radius:4px}
+.shots figcaption{font-size:12.5px;color:var(--soft);margin-top:9px}
+.disc{font-size:13px;color:var(--soft);margin-top:20px}
+
+/* ── 마지막 ── */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.row{display:flex;justify-content:space-between;gap:20px;padding:14px 0;border-top:1px solid var(--line);font-size:15.5px}
+.row:first-of-type{border-top:0}
+.row small{display:block;color:var(--soft);font-size:13px;margin-top:3px}
+.row time{color:var(--soft);font-size:13.5px;white-space:nowrap}
+h5{font-size:13px;font-weight:600;letter-spacing:.14em;color:var(--pt);margin-bottom:16px}
+h5+*{margin-top:0}
+.gap{margin-top:40px}
+.end{padding:76px 0 90px}
+.end h2{font-size:31px;font-weight:600;letter-spacing:-.035em;line-height:1.38}
+.end .meta{margin-top:34px}
+.foot{padding:26px 0 40px;font-size:13px;color:var(--soft);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+@media(max-width:860px){
+  .hero{padding:72px 0 56px}
+  .hero .wrap{grid-template-columns:1fr;gap:34px}
+  .hero img{width:124px;height:155px}
+  .hero h1{font-size:31px}
+  section{padding:58px 0}
+  .job,.facts,.body,.cols{grid-template-columns:1fr;gap:16px}
+  .job time{padding-top:0}
+  .shots.two{grid-template-columns:1fr}
+  .tnav{display:none}
+  .end h2{font-size:24px}
+}
+</style>
+</head>
+<body>
+
+<div class="top"><div class="wrap">
+  <div class="brand">양준혁<span>Software Developer</span></div>
+  <nav class="tnav">
+    <a href="#work">프로젝트</a><a href="#career">경력</a><a href="#skill">기술</a><a href="#more">자격</a>
+  </nav>
+</div></div>
+
+<header class="hero"><div class="wrap">
+  <div>
+    <div class="eyebrow">PORTFOLIO</div>
+    <h1>기획한 것을 만들어 배포하고<br><em>쓰이는 동안 고쳐왔습니다.</em></h1>
+    <p>AI 기능을 서비스에 붙이고 실제 사용 환경에서 버티게 만드는 일을 해왔습니다. 만드는 일보다 만든 것이 계속 쓰이게 하는 일에 시간을 더 썼습니다.</p>
+    <div class="meta">
+      <a href="mailto:junh9126@gmail.com">junh9126@gmail.com</a>
+      <a href="tel:+821057661639">+82 10-5766-1639</a>
+    </div>
+  </div>
+  <img src="img/portrait.jpg" alt="" width="168" height="210">
+</div></header>
+
+<section id="career"><div class="wrap">
+  <div class="shead"><h2>CAREER</h2><span>수행한 범위를 중심으로 정리했습니다</span></div>
+
+  <div class="job"><time>2026.02 – 현재</time><div>
+    <h3>루모스<i>소프트웨어 개발부 / 정규직</i></h3>
+    <p>실시간 코칭 서비스의 기획과 개발을 주도했습니다. 화면 구현과 데이터 API 연결부터 코드 서명과 버전 배포까지 맡고 배포 이후 사용자 환경에서 올라오는 문제에 대응했습니다. 생성형 AI 응답의 품질을 재는 평가 체계를 만들고 외부 고객 의뢰를 받아 대회 운영 업무를 자동화하는 시스템도 개발해 운영 중입니다.</p>
+  </div></div>
+
+  <div class="job"><time>2025.09 – 2025.12</time><div>
+    <h3>한국타이어앤테크놀로지<i>R&amp;D DX / 인턴</i></h3>
+    <p>사내 기술문서 약 2,000건을 AI가 검색할 수 있는 데이터로 가공했습니다. 문서 형식별 처리 기준을 정하고 전처리부터 색인까지 Python으로 자동화했습니다.</p>
+  </div></div>
+
+  <div class="job"><time>2025.03 – 2025.08</time><div>
+    <h3>충남대학교 데이터 네트워크 연구실<i>학부연구생</i></h3>
+    <p>음성 방송을 텍스트로 옮기고 내용 단위로 나눠 탐색할 수 있게 만드는 파이프라인을 설계하고 구현했습니다.</p>
+  </div></div>
+</div></section>
+
+<section id="skill"><div class="wrap">
+  <div class="shead"><h2>SKILLS</h2><span>도구가 아니라 쓴 자리로 적었습니다</span></div>
+
+  <div class="sk">
+    <h3>AI 기능을 서비스에 붙이는 일</h3>
+    <p>질문의 의도를 나눠 검색 경로를 정하고 찾은 근거로 답하게 구성했습니다. 외부 기능과 정보는 하나의 규약으로 연결해 대상이 늘어도 연결 방식이 유지되게 했습니다.</p>
+    <div class="tags"><b>LLM 질의 라우팅</b><b>RAG</b><b>임베딩 검색</b><b>MCP</b><b>FAISS</b><b>OpenSearch</b><b>Whisper</b></div>
+  </div>
+
+  <div class="sk">
+    <h3>서비스 개발과 운영</h3>
+    <p>화면을 만들고 데스크톱으로 배포했습니다. 코드 서명과 자동 업데이트까지 구성하고 배포 이후 올라온 문제를 고쳐 다시 내보냈습니다.</p>
+    <div class="tags"><b>React</b><b>TypeScript</b><b>Electron</b><b>WebSocket</b><b>REST</b><b>electron-builder</b></div>
+  </div>
+
+  <div class="sk">
+    <h3>서버와 데이터</h3>
+    <p>주문 API와 서비스 간 연동을 구현했고 문서를 정제해 검색 색인까지 연결했습니다.</p>
+    <div class="tags"><b>Java</b><b>Spring Boot</b><b>Spring Cloud</b><b>Python</b><b>FastAPI</b><b>Flask</b><b>Node.js</b><b>PHP</b><b>MySQL</b><b>MongoDB</b><b>Redis</b><b>RabbitMQ</b><b>Docker</b></div>
+  </div>
+
+  <div class="sk">
+    <h3>업무 흐름 설계</h3>
+    <p>화면을 먼저 만들지 않고 업무 전체를 하나의 데이터 흐름으로 정의한 뒤 구현했습니다. 규칙이 불명확하면 추측하지 않고 실제 담당자에게 확인해 조건으로 옮겼습니다.</p>
+    <div class="tags"><b>요구사항 확인</b><b>프로세스 정의</b><b>단계별 검수</b><b>운영 반영</b></div>
+  </div>
+
+  <div class="sk">
+    <h3>품질과 검증</h3>
+    <p>바꿀 때마다 같은 기준으로 다시 확인해 고친 문제가 재발하지 않는지 봤습니다. 판정 도구 자체가 틀릴 수 있다고 보고 결과를 원문과 대조했습니다.</p>
+    <div class="tags"><b>단위 테스트</b><b>회귀 평가</b><b>골든셋</b><b>라벨링 기반 지표 비교</b></div>
+  </div>
+</div></section>
+
+<section id="work"><div class="wrap">
+  <div class="shead"><h2>PROJECTS</h2><span>아홉 건 모두 혼자 또는 소수 인원으로 끝까지 맡았습니다</span></div>
+
+  <!-- 01 -->
+  <article class="proj">
+    <div class="pno">01</div>
+    <div class="pwho">루모스 / LOLPAGO 서비스</div>
+    <h3>실시간 코칭 데스크톱 앱 개발과 운영</h3>
+    <p class="plead">기획과 화면 설계부터 클라이언트 구현, 빌드와 코드 서명, 배포 이후 장애 대응까지 한 사이클을 맡았습니다.</p>
+    <div class="facts">
+      <div class="hero-num">100 → 150–200<u>동시 실행 시 프레임(FPS)</u></div>
+      <dl class="kv">
+        <dt>기간</dt><dd>2026.02 – 현재</dd>
+        <dt>기술</dt><dd>TypeScript / React 18 / Electron 33 / WebSocket / REST API / MySQL</dd>
+        <dt>규모</dt><dd>기능 탭 7개 · 실행 모듈 41개 · 외부 연동 15종</dd>
+      </dl>
+    </div>
+    <div class="body">
+      <div>
+        <h4>프로세스 구조</h4>
+        <ul>
+          <li>실행 컨텍스트를 네 개로 나눴습니다. 인증 정보와 파일 경로를 다루는 코드는 메인 프로세스에만 두고 화면에는 허용한 API만 노출했습니다.</li>
+          <li>오래 유지해야 하는 작업은 화면이 다시 그려져도 끊기지 않도록 메인 프로세스에 배치했습니다. 오버레이는 별도 창으로 분리했습니다.</li>
+          <li>오버레이는 기본적으로 마우스 입력을 통과시키고 필요한 순간에만 상호작용을 받게 해 원래 작업을 가리지 않습니다.</li>
+        </ul>
+      </div>
+      <div>
+        <h4>실시간 수집과 배포</h4>
+        <ul>
+          <li>1초 주기로 화면을 캡처해 필요한 영역만 잘라 보내고 결과를 화면과 음성으로 나눠 전달했습니다. 전체 화면이 아니라 대상 창만 캡처해 다른 창 내용이 나가지 않게 했습니다.</li>
+          <li>DUNS 번호로 조직 확인을 거쳐 EV 코드 서명을 빌드에 연결했습니다.</li>
+          <li>릴리스 파일만 올리는 공개 저장소를 소스와 분리해 앱에 토큰을 넣지 않고도 자동 업데이트가 되게 했습니다.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="body" style="margin-top:30px">
+      <div>
+        <h4>데이터 정합성</h4>
+        <p>특정 지표를 집계할 때 관련 필드 하나를 빠뜨려 실제보다 낮은 값이 나오고 있었습니다. 이 값이 AI 분석 입력으로도 전달돼 근거가 틀린 지적이 생성되고 있었습니다. 클라이언트 계산식을 고치고 서버 집계 항목도 함께 수정하도록 전달했습니다. 잘못된 데이터 한 건이 그것을 참조하는 기능까지 틀리게 만든다는 점을 확인했습니다.</p>
+      </div>
+      <div>
+        <h4>예외가 발생하지 않는 결함</h4>
+        <p>로그로는 확인되지 않는 결함이 세 건 있었습니다. 이미지 로딩 실패를 감추던 처리, 전역 스타일에 가려진 화면 요소, 접두어 기준 필터가 이전 데이터까지 지우던 처리입니다. 모두 결과물을 직접 확인하다 발견했고 이후에는 예외 여부가 아니라 실제 출력으로 확인하는 절차를 뒀습니다.</p>
+      </div>
+    </div>
+    <div class="body" style="margin-top:30px">
+      <div>
+        <h4>문제 해결 · 같은 원인의 두 증상</h4>
+        <p>단독 실행에서는 없던 성능 저하가 동시 실행 때 나타났고 오래 켜 둘수록 메모리도 늘었습니다. 별개로 보지 않고 캡처부터 전송까지 흐름을 따라가 같은 구간에서 비롯된 것을 확인했습니다. 이미지를 base64로 바꿔 JSON에 담던 방식을 바이너리 규격으로 교체했습니다.</p>
+      </div>
+      <div>
+        <h4>문제 해결 · 인코딩 경계</h4>
+        <p>한글이 들어가면 서버가 데이터 경계를 잘못 잡았습니다. 헤더 길이를 문자열 길이로 계산했는데 JavaScript의 길이는 UTF-16 코드 유닛 기준이라 UTF-8 바이트 수와 어긋났습니다. 또 검증 스크립트가 HTTP 응답 청크를 문자열로 이어붙여 UTF-8 문자가 경계에서 쪼개지고 있었습니다. 버퍼로 모아 한 번에 디코딩하도록 고쳤습니다.</p>
+      </div>
+    </div>
+    <div class="out">
+      <h4>결과</h4>
+      <p>동시 실행 시 프레임이 약 100에서 150–200으로 올라갔고 틱당 전송량은 약 24% 줄었습니다. 누적되던 메모리 증가도 함께 해결했습니다. 현재 누적 약 200회 다운로드에 하루 10명 내외가 쓰고 있습니다.</p>
+    </div>
+    <div class="shots two">
+      <figure><img src="img/lp_main.png" alt="" loading="lazy"><figcaption>앱 메인 화면</figcaption></figure>
+      <figure><img src="img/lp_dock.png" alt="" loading="lazy"><figcaption>게임 클라이언트 옆에 도킹한 실행 화면</figcaption></figure>
+    </div>
+    <p class="disc">개발 과정에서 관찰한 환경 기준의 수치이며 모든 PC의 성능을 보장하지는 않습니다.</p>
+  </article>
+
+  <!-- 02 -->
+  <article class="proj">
+    <div class="pno">02</div>
+    <div class="pwho">루모스 / 지식베이스와 평가</div>
+    <h3>AI 응답 품질 검증 체계 구축</h3>
+    <p class="plead">데이터 수집과 검색 구조 설계부터 평가 체계 구축과 회귀 확인까지 맡았습니다.</p>
+    <div class="facts">
+      <div class="hero-num">1,809 / 1,812<u>네 단계 기준을 통과한 문항</u></div>
+      <dl class="kv">
+        <dt>기간</dt><dd>2026.06 – 2026.09</dd>
+        <dt>기술</dt><dd>Python / 구조화 검색 / LLM 질의 라우팅 / 회귀 평가</dd>
+        <dt>규모</dt><dd>검증 질문 50문항 → 1,812문항</dd>
+      </dl>
+    </div>
+    <div class="body">
+      <div>
+        <h4>문제</h4>
+        <p>검색 회귀 테스트는 통과했지만 실제 질문에서는 필요한 조건을 빠뜨리거나 자료가 있는데도 답할 수 없다는 응답이 나왔습니다. 어느 단계에서 정보가 누락되는지 밝히는 일이 가장 어려웠습니다.</p>
+      </div>
+      <div>
+        <h4>한 일</h4>
+        <ul>
+          <li>의도 분류 결과와 검색된 발췌문 그리고 최종 답변을 각각 기록해 비교했습니다.</li>
+          <li>대상을 인식하지 못한 경우와 문서를 찾고도 조건을 전달하지 못한 경우를 구분했습니다.</li>
+          <li>검색 경로를 수정한 뒤에도 기존 결과가 유지되는지 확인하고 고친 오답은 기준 문항으로 남겼습니다.</li>
+          <li>자동 실패 기록을 지우거나 통과할 때까지 답변을 다시 생성하지 않고 원래 판정과 검토 결과를 각각 남겼습니다.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="out">
+      <h4>결과</h4>
+      <p>라우팅과 검색, 근거, 최종 응답 네 단계로 나눠 1,812문항을 검증해 1,809문항이 기준을 통과했습니다. 고친 오답은 기준 문항으로 남아 이후 갱신에서도 같은 기준으로 다시 확인됩니다.</p>
+    </div>
+    <div class="shots">
+      <figure><img src="img/ai_eval.png" alt="" loading="lazy"><figcaption>근거 구간을 함께 제시하는 분석 응답 화면</figcaption></figure>
+    </div>
+  </article>
+
+  <!-- 03 -->
+  <article class="proj">
+    <div class="pno">03</div>
+    <div class="pwho">슈퍼차차 / 3인 팀 프로젝트</div>
+    <h3>학내 챗봇 통합 플랫폼</h3>
+    <p class="plead">전체 시스템 구조 설계와 프론트엔드 개발을 맡고 임베딩 기반 챗봇 자동 연결을 구현했습니다.</p>
+    <div class="facts">
+      <div class="hero-num">30% → 2건<u>평가셋 120건 기준 오분류</u></div>
+      <dl class="kv">
+        <dt>기간</dt><dd>2025.05 – 2025.09</dd>
+        <dt>기술</dt><dd>React / FastAPI / MCP / 임베딩 / FAISS / SQLite</dd>
+        <dt>수상</dt><dd>생성형 AI 활용 경진대회 은상</dd>
+      </dl>
+    </div>
+    <div class="body">
+      <div>
+        <h4>문제</h4>
+        <p>학내에는 부서별 챗봇이 이미 여러 개 있었습니다. 문제는 사용자가 질문하기 전에 어느 챗봇에 물어야 하는지부터 정해야 한다는 점이었습니다. 답을 주는 창구는 있는데 그 창구를 찾는 일이 사용자 몫으로 남아 있었습니다.</p>
+      </div>
+      <div>
+        <h4>한 일</h4>
+        <ul>
+          <li>질문의 의미를 임베딩으로 표현해 알맞은 챗봇을 찾도록 구현했습니다. 초기 오분류가 30%를 넘어 틀린 사례를 담당 중복과 담당 부재, 모호한 질문, 오연결로 나눠 원인을 확인했습니다.</li>
+          <li>약 120건의 평가셋으로 기준을 바꿀 때마다 전체를 다시 돌리고 전후를 비교해 다른 유형이 나빠지지 않았는지 확인했습니다.</li>
+          <li>챗봇을 하나로 합치지 않고 앞단에 연결 계층만 두었습니다. 각 부서의 운영은 그대로 두고 입구만 바꾸는 방법이라고 봤습니다.</li>
+          <li>외부 정보 시스템은 MCP로 같은 규약으로 연결해 대상이 늘어도 연결 방식은 유지되게 했습니다.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="out">
+      <h4>결과</h4>
+      <p>오분류는 약 120건 중 2건까지 줄었고 챗봇을 찾는 단계도 3단계에서 1단계가 됐습니다. 신규 챗봇은 역할 설명만 등록하면 라우팅에 반영됩니다. 프로젝트 종료 후 학교 측에서 실제 활용을 위한 협업 제안도 받았습니다.</p>
+    </div>
+    <div class="shots">
+      <figure><img src="img/chat.png" alt="" loading="lazy"><figcaption>직접 개발한 통합 플랫폼 홈 화면</figcaption></figure>
+    </div>
+  </article>
+
+  <!-- 04 -->
+  <article class="proj">
+    <div class="pno">04</div>
+    <div class="pwho">한국타이어앤테크놀로지 / R&amp;D DX 인턴</div>
+    <h3>사내 기술문서 검색 데이터 구축</h3>
+    <p class="plead">문서 형식별 처리 기준을 세우고 전처리부터 색인까지 이어지는 파이프라인을 구현했습니다.</p>
+    <div class="facts">
+      <div class="hero-num">2,000건 / 1개월<u>당초 2개월 예상 분량</u></div>
+      <dl class="kv">
+        <dt>기간</dt><dd>2025.09 – 2025.12</dd>
+        <dt>기술</dt><dd>Python / OpenSearch / 임베딩</dd>
+        <dt>대상</dt><dd>사내 기술문서 약 2,000건</dd>
+      </dl>
+    </div>
+    <div class="body">
+      <div>
+        <h4>문제</h4>
+        <p>연구원이 답변 근거를 직접 확인하는 서비스라 원문의 표와 제목 구조가 남아 있어야 했습니다. 문서마다 형식과 작성 방식이 달라 그대로 변환하면 그 구조가 사라졌고 검색된 근거만으로는 내용을 판단하기 어려웠습니다.</p>
+      </div>
+      <div>
+        <h4>한 일</h4>
+        <ul>
+          <li>PDF, PPT, DOCX, HWP 등 형식별로 변환 결과를 비교해 처리 기준을 정했습니다.</li>
+          <li>Python으로 전처리와 청킹, 임베딩, OpenSearch 색인까지 자동화했습니다.</li>
+          <li>처음에는 제목 구조를 따라 잘랐으나 연구원이 실제로 던지는 질문과 맞지 않아 업무 단위로 다시 나눴습니다.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="out">
+      <h4>결과</h4>
+      <p>당초 약 2개월로 예상되던 2,000건 규모의 문서 처리를 1개월 이내에 완료했습니다. 정리된 데이터와 AI가 쓸 수 있는 데이터는 다르다는 점을 이 과정에서 확인했습니다.</p>
+    </div>
+  </article>
+
+  <!-- 05 -->
+  <article class="proj">
+    <div class="pno">05</div>
+    <div class="pwho">루모스 / 외부 고객 의뢰</div>
+    <h3>대회 운영 업무 자동화 시스템</h3>
+    <p class="plead">태권도 대회 운영 업무를 2인이 개발했습니다. 업무 흐름 설계와 기능 구현, 발주자 요구사항 확인과 진행 보고를 맡았습니다.</p>
+    <div class="facts">
+      <div class="hero-num">22<u>하나의 흐름으로 연결한 운영 기능</u></div>
+      <dl class="kv">
+        <dt>기간</dt><dd>2026.04 – 이후 운영과 유지보수</dd>
+        <dt>기술</dt><dd>PHP / MySQL</dd>
+        <dt>조건</dt><dd>대회 일정 고정 · 기존 운영 방식 유지</dd>
+      </dl>
+    </div>
+    <div class="body">
+      <div>
+        <h4>문제</h4>
+        <p>참가 신청과 체급 편성, 대진표, 결과 반영, 순위 산정, 상장 발행이 각각 따로 처리됐습니다. 한 단계를 고치면 다음 단계는 손으로 다시 맞춰야 했습니다. 대회 날짜는 이미 정해져 있어 당일에 멈추면 경기 진행이 멈추는 조건이었습니다.</p>
+      </div>
+      <div>
+        <h4>한 일</h4>
+        <ul>
+          <li>개별 화면부터 만들지 않고 전체 업무를 하나의 데이터 흐름으로 먼저 정의했습니다. 참가자 정보를 기준 데이터로 두고 뒤따르는 단계가 그 값을 이어받게 설계했습니다.</li>
+          <li>규칙이 불명확한 부분은 추측으로 구현하지 않고 발주자에게 실제 진행 순서와 예외를 확인해 조건으로 구체화했습니다.</li>
+          <li>한 번에 교체하지 않고 단계를 나눠 구현했습니다. 주 2~3회 진행 보고와 검수를 거쳐 테스트 서버에서 검증한 뒤 운영에 반영했습니다.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="out">
+      <h4>결과</h4>
+      <p>신청부터 상장 발행까지 이어지는 22개 기능을 2인이 개발해 실제 대회에 적용했습니다. 한 곳을 고치면 뒤따르는 단계가 함께 바뀌어 중간에 정보를 옮겨 적는 일이 없어졌습니다. 대회 이후 수정 요청도 같은 구조 안에서 처리하며 운영을 이어가고 있습니다.</p>
+    </div>
+  </article>
+
+  <!-- 06 -->
+  <article class="proj">
+    <div class="pno">06</div>
+    <div class="pwho">NHN Academy / 팀 프로젝트</div>
+    <h3>MSA 기반 온라인 서점</h3>
+    <p class="plead">주문 서비스 API 개발과 단위 테스트를 맡고 화면 담당자와 응답 구조를 조율했습니다.</p>
+    <div class="facts">
+      <div class="hero-num">80%<u>주요 로직 단위 테스트 커버리지</u></div>
+      <dl class="kv">
+        <dt>기간</dt><dd>2024.07 – 2024.12</dd>
+        <dt>기술</dt><dd>Java / Spring Boot / Spring Cloud / MySQL / Redis / RabbitMQ / Docker</dd>
+        <dt>수상</dt><dd>프로젝트 우수상</dd>
+      </dl>
+    </div>
+    <div class="body">
+      <div>
+        <h4>문제</h4>
+        <p>화면을 담당한 팀원은 한 번에 필요한 정보를 모두 담은 응답을 원했습니다. 저는 주문 서비스가 다른 영역의 데이터까지 모아 내려주면 서비스를 나눈 의미가 없다고 봤습니다. 서로 근거가 있어 말로는 결론이 나지 않았습니다.</p>
+      </div>
+      <div>
+        <h4>한 일</h4>
+        <ul>
+          <li>제 주장을 다시 설명하는 대신 화면이 실제로 어떤 정보를 언제 쓰는지 함께 적어 보자고 했습니다.</li>
+          <li>목록을 만들어 보니 첫 화면에 바로 필요한 값과 사용자가 동작한 뒤에야 필요한 값이 섞여 있었습니다.</li>
+          <li>앞쪽은 하나의 응답으로 내려주고 뒤쪽은 서비스별로 나누는 선에서 합의한 뒤 응답 형식과 오류 처리를 문서로 남겼습니다.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="out">
+      <h4>결과</h4>
+      <p>주요 로직과 예외를 단위 테스트로 검증하며 커버리지 80% 이상을 유지했습니다. 기준을 문서로 남긴 뒤 연동 과정에서 되묻는 일이 줄었고 프로젝트는 우수상을 받았습니다.</p>
+    </div>
+  </article>
+
+  <!-- 07 -->
+  <article class="proj">
+    <div class="pno">07</div>
+    <div class="pwho">충남대 데이터 네트워크 연구실 / 학부연구생</div>
+    <h3>라디오 방송 구간 탐색 플랫폼</h3>
+    <p class="plead">음성 인식과 의미 단위 분할 파이프라인을 설계하고 화면까지 구현했습니다.</p>
+    <div class="facts">
+      <div class="hero-num">1시간 → 구간<u>방송을 찾아 듣는 단위</u></div>
+      <dl class="kv">
+        <dt>기간</dt><dd>2025.03 – 2025.08</dd>
+        <dt>기술</dt><dd>React / Flask / MongoDB / Whisper / GPT-4o-mini</dd>
+        <dt>검증</dt><dd>정답 라벨링 후 F1 비교</dd>
+      </dl>
+    </div>
+    <div class="body">
+      <div>
+        <h4>문제</h4>
+        <p>라디오 다시듣기는 한 시간 분량을 처음부터 끝까지 재생하는 방식이었습니다. 듣고 싶은 대목 하나 때문에 방송 전체를 넘겨 가며 찾아야 했습니다.</p>
+      </div>
+      <div>
+        <h4>한 일</h4>
+        <ul>
+          <li>Whisper로 음성을 텍스트로 옮기고 그 결과를 LLM이 내용 단위로 나눠 태그를 붙이도록 구성했습니다.</li>
+          <li>한 시간짜리 음성은 파일을 나눠 배치로 돌려 처리 시간을 줄였고 경계에서 맥락이 끊기지 않게 구간을 겹쳤습니다.</li>
+          <li>노래 구간은 노래로, 사연 구간은 사연으로 잡히는지 정답을 직접 라벨링해 F1 점수로 비교했습니다. 음성 인식 모델과 언어 모델을 바꿔 가며 같은 정답셋으로 돌려 조합을 정했습니다.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="out">
+      <h4>결과</h4>
+      <p>방송 전체를 재생하지 않고 날짜와 키워드로 원하는 구간을 찾아 그 지점부터 들을 수 있게 됐습니다. 모델은 감으로 고르지 않고 같은 기준으로 비교해 선택했습니다.</p>
+    </div>
+  </article>
+
+  <!-- 08 -->
+  <article class="proj">
+    <div class="pno">08</div>
+    <div class="pwho">졸업프로젝트 / 3인 팀</div>
+    <h3>네트워크 로그 이상징후 탐지</h3>
+    <p class="plead">로그 분석과 서비스 구조 설계 및 화면 구현을 맡았습니다.</p>
+    <div class="facts">
+      <div class="hero-num">4<u>탐지하도록 구현한 이상 사례 유형</u></div>
+      <dl class="kv">
+        <dt>기간</dt><dd>학사 졸업논문</dd>
+        <dt>기술</dt><dd>Python / RIPE RIS / BGP 분석 / RAG / React</dd>
+      </dl>
+    </div>
+    <div class="body">
+      <div>
+        <h4>문제</h4>
+        <p>BGP 로그에는 어떤 네트워크를 거쳐 목적지로 가는지가 기록되지만 라우팅 지식이 없으면 변화의 의미를 파악하기 어렵습니다. 경로가 잘못 바뀌면 통신이 의도하지 않은 구간을 거치게 되므로 변화를 빨리 알아채야 합니다.</p>
+      </div>
+      <div>
+        <h4>한 일</h4>
+        <ul>
+          <li>RIPE RIS가 공개한 로그에서 AS Path와 라우팅 변화를 분석해 Prefix Hijacking과 Route Leak, MOAS, Flapping 네 가지 이상 사례를 감지했습니다.</li>
+          <li>원시 로그를 그대로 검색 대상에 넣으면 근거가 여러 기록에 흩어진다고 보고 분석 결과를 먼저 보고서로 정리했습니다.</li>
+          <li>이후의 질문은 그 보고서를 근거로 답하도록 RAG 구조를 설계해 같은 결과를 두고 후속 질문을 이어갈 수 있게 했습니다.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="out">
+      <h4>결과</h4>
+      <p>사용자가 기간과 IP를 지정하면 이상 사례를 정리한 보고서가 생기고 그 내용에 관해 자연어로 물어볼 수 있습니다. 라우팅 데이터를 직접 읽어야 했던 과정을 보고서와 질의응답으로 바꿨습니다.</p>
+    </div>
+    <div class="shots">
+      <figure><img src="img/bgp.png" alt="" loading="lazy"><figcaption>분석 결과와 질의응답 화면</figcaption></figure>
+    </div>
+  </article>
+
+  <!-- 09 -->
+  <article class="proj">
+    <div class="pno">09</div>
+    <div class="pwho">개인 프로젝트</div>
+    <h3>예매 오픈 감지와 알림 서비스</h3>
+    <p class="plead">특정 상영관의 예매 오픈 시점이 일정하지 않아 직접 만들어 쓰고 있는 감시 도구입니다. 예매를 대신 하지는 않고 새로 열린 일정만 알립니다.</p>
+    <div class="facts">
+      <div class="hero-num">18 → 9MB<u>시간당 요청 전송량</u></div>
+      <dl class="kv">
+        <dt>기간</dt><dd>2026.08 – 현재 운영 중</dd>
+        <dt>기술</dt><dd>Node.js / Playwright / Telegram Bot API</dd>
+        <dt>구성</dt><dd>단독 실행 · 상태 파일 기반 · 작업 스케줄러 등록</dd>
+      </dl>
+    </div>
+    <div class="body">
+      <div>
+        <h4>문제</h4>
+        <p>오픈 시점을 알 수 없어 수시로 들어가 확인해야 했습니다. 단순하게 짧은 주기로 전체 상영표를 받아오면 감지는 빨라지지만 요청량이 그만큼 늘어납니다. 감시 도구가 대상 서비스에 부담을 주는 구조는 오래 돌릴 수 없다고 봤습니다.</p>
+      </div>
+      <div>
+        <h4>한 일</h4>
+        <ul>
+          <li>응답 크기가 다른 두 요청을 분리했습니다. 날짜 목록은 0.7KB라 1분마다 받고 전체 상영표는 10분 주기로 돌렸습니다. 새 날짜가 보일 때만 그 날짜의 상영표를 추가로 조회합니다.</li>
+          <li>첫 실행은 알림을 보내지 않고 기준선만 저장합니다. 이후에는 이전 상태와의 차집합만 알리고 상태를 파일로 남겨 재시작해도 중복 발송이 없습니다.</li>
+          <li>요청 간격에 난수를 섞고 차단과 오류에 각각 다른 대기 시간을 뒀습니다. 연속 실패가 임계를 넘으면 세션을 새로 엽니다.</li>
+          <li>하루 두 번 동작 여부를 알리는 신호를 보내 조용히 멈춘 경우를 알 수 있게 했습니다.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="out">
+      <h4>결과</h4>
+      <p>분당 요청이 3.6회에서 2.9회로, 시간당 전송량이 약 18MB에서 9MB로 줄었습니다. 같은 기간 새 날짜 감지는 최대 5분에서 1분으로 빨라졌습니다. 기존 날짜의 회차 추가 감지는 10분까지 늦어지지만 급하지 않은 변화라 그쪽을 양보했습니다.</p>
+    </div>
+    <p class="disc">공개된 예매 페이지에서 확인 가능한 상영 일정만 조회하며 예매나 좌석 선점 기능은 없습니다.</p>
+  </article>
+</div></section>
+
+<section id="more"><div class="wrap">
+  <div class="shead"><h2>MORE</h2><span>증빙 가능한 항목만 적었습니다</span></div>
+  <div class="cols">
+    <div>
+      <h5>학력</h5>
+      <div class="row"><div>충남대학교 컴퓨터융합학부<small>학사 졸업</small></div><time>2020.03 – 2026.02</time></div>
+      <div class="gap"></div>
+      <h5>자격</h5>
+      <div class="row"><div>데이터분석 준전문가 (ADsP)</div><time>2026.06</time></div>
+      <div class="row"><div>SQL 개발자 (SQLD)</div><time>2025.09</time></div>
+      <div class="row"><div>OPIc IH</div><time>2025.09</time></div>
+    </div>
+    <div>
+      <h5>수상</h5>
+      <div class="row"><div>생성형 AI 활용 경진대회 은상<small>학내 챗봇 통합 플랫폼</small></div><time>2025</time></div>
+      <div class="row"><div>프로젝트 우수상<small>MSA 기반 온라인 서점</small></div><time>2024</time></div>
+      <div class="gap"></div>
+      <h5>논문</h5>
+      <div class="row"><div>BGP 라우팅 데이터 분석을 위한 RAG 기반 LLM 대화형 분석 시스템 설계 및 구현<small>학사 졸업논문</small></div></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="end"><div class="wrap">
+  <h2>성능과 데이터, 결과를 확인할 기준까지<br>맞아야 서비스가 남는다고 봅니다.</h2>
+  <div class="meta">
+    <a href="mailto:junh9126@gmail.com">junh9126@gmail.com</a>
+    <a href="tel:+821057661639">+82 10-5766-1639</a>
+  </div>
+</div></section>
+
+<div class="wrap"><div class="foot">
+  <span>양준혁 / Software Developer</span>
+  <span>2026</span>
+</div></div>
+
+</body>
+</html>
